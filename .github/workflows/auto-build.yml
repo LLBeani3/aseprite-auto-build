@@ -61,3 +61,9 @@ jobs:
           tag_name: ${{ steps.get_version.outputs.version }}
           files: |
             Aseprite-Windows-x64-${{ steps.get_version.outputs.version }}.zip
+
+      - name: Upload Aseprite
+        uses: actions/upload-artifact@v4
+        with:
+          name: Aseprite-Windows
+          path: build/bin/*
